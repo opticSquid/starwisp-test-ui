@@ -16,7 +16,6 @@ const drawerWidth = 240;
 const Header = (props) => {
   const classes = useStyles();
   const location = useLocation().pathname;
-  console.log("path:", location);
   return (
     <div className={classes.root}>
       {/* <AppBar position="fixed" className={classes.appBar}>
@@ -75,7 +74,7 @@ const Header = (props) => {
         </List>
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        {/* <div className={classes.toolbar} /> */}
         {props.children}
       </main>
     </div>
