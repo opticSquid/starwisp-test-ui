@@ -1,34 +1,27 @@
 import {
   makeStyles,
   Drawer,
-  CssBaseline,
-  AppBar,
-  Toolbar,
   List,
-  Typography,
-  Divider,
   ListItem,
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import SettingsIcon from "@material-ui/icons/Settings";
+import SchoolIcon from "@material-ui/icons/School";
+import { Link, useLocation } from "react-router-dom";
 
 const drawerWidth = 240;
 
 const Header = (props) => {
   const classes = useStyles();
-
+  const location = useLocation().pathname;
+  console.log("path:", location);
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            Permanent drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      {/* <AppBar position="fixed" className={classes.appBar}>
+        
+      </AppBar> */}
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -37,28 +30,48 @@ const Header = (props) => {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar} />
-        <Divider />
+        {/* <div className={classes.toolbar} /> */}
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <ListItem
+              button
+              key={1}
+              style={
+                location === "/"
+                  ? { backgroundColor: "#ffc480" }
+                  : { backgroundColor: "transparent" }
+              }
+            >
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <DashboardIcon className={classes.ListColor} />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText className={classes.ListColor}>
+                Dashboard
+              </ListItemText>
             </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
+          </Link>
+          <Link to="/messeges" style={{ textDecoration: "none" }} >
+            <ListItem
+              button
+              key={2}
+              style={
+                location === "/messeges"
+                  ? { backgroundColor: "#ffc480" }
+                  : { backgroundColor: "transparent" }
+              }
+            >
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <SchoolIcon className={classes.ListColor} />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText className={classes.ListColor}>Lorem</ListItemText>
             </ListItem>
-          ))}
+          </Link>
+          <ListItem button key={3}>
+            <ListItemIcon>
+              <SettingsIcon className={classes.ListColor} />
+            </ListItemIcon>
+            <ListItemText className={classes.ListColor}>Ipsum</ListItemText>
+          </ListItem>
         </List>
       </Drawer>
       <main className={classes.content}>
@@ -85,6 +98,10 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: "#FF6C40",
+  },
+  ListColor: {
+    color: "#ffffff",
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
