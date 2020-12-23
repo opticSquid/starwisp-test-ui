@@ -2,19 +2,23 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./Components/Header";
-import DashContent from "./Components/DashContent";
+import DashContent from "./Components/Dashboard/DashContent";
+import MessegeContent from "./Components/Messeges/MessegeContent";
 function App() {
   return (
     <div className="App">
       <CssBaseline />
       <Router>
-        <Switch>
-          <Route path="/">
-            <Header>
+        <Header>
+          <Switch>
+            <Route path="/messeges">
+              <MessegeContent />
+            </Route>
+            <Route path="/">
               <DashContent />
-            </Header>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </Header>
       </Router>
     </div>
   );
