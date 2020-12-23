@@ -1,4 +1,4 @@
-import { Paper, makeStyles, Grid, Box } from "@material-ui/core";
+import { Paper, makeStyles, Grid} from "@material-ui/core";
 import { Chart, AreaSeries } from "@devexpress/dx-react-chart-material-ui";
 const toRadians = (angle) => {
   return angle * (Math.PI / 180);
