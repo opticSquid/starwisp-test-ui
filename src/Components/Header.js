@@ -11,7 +11,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import SchoolIcon from "@material-ui/icons/School";
 import { Link, useLocation } from "react-router-dom";
 
-const drawerWidth = 200;
+const drawerWidth = 170;
 
 const Header = (props) => {
   const classes = useStyles();

@@ -124,7 +124,7 @@ const useStyles = makeStyles(() => ({
   floatingButton: {
     backgroundColor: "#ff6c40",
     color: "#ffffff",
-    left: "80%",
+    left: "75%",
     bottom: "5%",
   },
   form:{
