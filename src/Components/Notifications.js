@@ -41,22 +41,40 @@ const arr = [
 ];
 const Notifications = () => {
   return (
-    <Box component="div" style={{boxShadow:"inset 0px 0px 20px rgba(0, 0, 0, 0.05)"}}>
+    <Box
+      component="div"
+      style={{
+        boxShadow: "inset 0px 0px 20px rgba(0, 0, 0, 0.07)",
+        borderRadius: 15,
+      }}
+    >
       <List>
         {arr.map((item) => {
           return (
             <Fragment>
               <ListItem>
-                  <div style={{backgroundColor: item.color, height: 100, width: 93, borderWidth:5, borderColor: "#ffffff"}}/>
-                <ListItemText style={{marginLeft: 10}}>
+                <div
+                  style={{
+                    backgroundColor: item.color,
+                    height: 100,
+                    width: 93,
+                    boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.1)"
+                  }}
+                />
+                <ListItemText style={{ marginLeft: 10 }}>
                   <Typography variant="h4">{item.title}</Typography>
                   <Typography variant="h6">{item.subtitle}</Typography>
                 </ListItemText>
               </ListItem>
-              <Divider/>
+              <Divider />
             </Fragment>
           );
         })}
+        <ListItem>
+          <ListItemText>
+            <Typography variant="h6" style={{textAlign:"center"}}>View All</Typography>
+          </ListItemText>
+        </ListItem>
       </List>
     </Box>
   );

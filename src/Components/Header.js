@@ -11,7 +11,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import SchoolIcon from "@material-ui/icons/School";
 import { Link, useLocation } from "react-router-dom";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const Header = (props) => {
   const classes = useStyles();
@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: "#f1f1f1",
     padding: theme.spacing(3),
   },
 }));

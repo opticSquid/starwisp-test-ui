@@ -5,7 +5,6 @@ import {
   ArgumentAxis,
   ValueAxis,
   Tooltip,
-  Title,
 } from "@devexpress/dx-react-chart-material-ui";
 import { EventTracker } from "@devexpress/dx-react-chart";
 import { Paper, Grid, Typography } from "@material-ui/core";
@@ -26,15 +25,31 @@ const LargeGraph = () => {
   return (
     <Paper style={{ borderRadius: 15 }}>
       <Grid container direction="row">
-        <Grid item xs={8}>
-          <Chart data={graphdata}>
-            <ArgumentAxis />
-            <ValueAxis />
-            <SplineSeries argumentField="x" valueField="y" color="#ffe700" />
-            <Title text="SalesReport September 2020" />
-            <EventTracker />
-            <Tooltip targetItem={Target} onTargetItemChange={setTarget} />
-          </Chart>
+        <Grid item xs={8} style={{ paddingLeft: "3%", paddingRight: "3%" }}>
+          <Grid container direction="column" spacing={2}>
+            <Grid item xs={12}>
+              <Typography variant="h4" style={{ color: "#593636" }}>
+                Sales Report
+              </Typography>
+
+              <Typography variant="subtitle1" style={{ color: "#bdbdbd" }}>
+                September 2020
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Chart data={graphdata}>
+                <ArgumentAxis />
+                <ValueAxis />
+                <SplineSeries
+                  argumentField="x"
+                  valueField="y"
+                  color="#ffe700"
+                />
+                <EventTracker />
+                <Tooltip targetItem={Target} onTargetItemChange={setTarget} />
+              </Chart>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid
           item
@@ -46,7 +61,10 @@ const LargeGraph = () => {
           }}
         >
           <Grid item xs={12}>
-            <Typography variant="h4" style={{color: "white", textAlign: "left", marginLeft: "3%"}}>
+            <Typography
+              variant="h4"
+              style={{ color: "white", textAlign: "left", marginLeft: "3%" }}
+            >
               17 Sep
             </Typography>
           </Grid>

@@ -7,18 +7,21 @@ const RightTab = () => {
     setValue(newValue);
   };
   return (
-    <Paper square>
+    <Paper square style={{ borderRadius: 15}}>
       <Tabs
         value={value}
         indicatorColor="primary"
-        textColor=""
+        textColor="primary"
         onChange={handleChange}
         aria-label="disabled tabs example"
+        style={{backgroundColor: "#f5f5f5", borderTopRightRadius: 15, borderTopLeftRadius: 15}}
       >
-        <Tab label="Notifications"/>
-        <Tab label="Events" disabled/>
+        <Tab label="Notifications" style={{backgroundColor: "#ffffff"}} />
+        <Tab label="Events" disabled  />
       </Tabs>
-      <Notifications/>
+      <div style={{padding: "5%"}}>
+        <Notifications />
+      </div>
     </Paper>
   );
 };
