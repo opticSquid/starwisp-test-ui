@@ -16,7 +16,7 @@ function Interaction() {
   const [{ posts }] = useStateValue();
   const classes = useStyles();
   const [Counter, setCounter] = useState(0);
-  const [Hidden, setHidden] = useState(true);
+  const [Hidden, setHidden] = useState(false);
   const time = (post) => {
     let hour = post.time.getHours();
     let time;
