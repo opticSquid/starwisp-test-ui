@@ -11,7 +11,6 @@ const data = () => {
       y: (Math.exp(-i) * Math.cos(toRadians(2*Math.PI*i))).toFixed(5),
     });
   }
-  console.log(dataset);
   return dataset;
 };
 function Targets(props) {
