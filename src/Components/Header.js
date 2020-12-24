@@ -9,9 +9,10 @@ import {
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import SettingsIcon from "@material-ui/icons/Settings";
 import SchoolIcon from "@material-ui/icons/School";
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { Link, useLocation } from "react-router-dom";
 
-const drawerWidth = 170;
+const drawerWidth = 220;
 
 const Header = (props) => {
   const classes = useStyles();
@@ -60,12 +61,18 @@ const Header = (props) => {
               }
             >
               <ListItemIcon>
-                <SchoolIcon className={classes.ListColor} />
+                <QuestionAnswerIcon className={classes.ListColor} />
               </ListItemIcon>
-              <ListItemText className={classes.ListColor}>Lorem</ListItemText>
+              <ListItemText className={classes.ListColor}>Messeges</ListItemText>
             </ListItem>
           </Link>
           <ListItem button key={3}>
+            <ListItemIcon>
+              <SchoolIcon className={classes.ListColor} />
+            </ListItemIcon>
+            <ListItemText className={classes.ListColor}>Lorem</ListItemText>
+          </ListItem>
+          <ListItem button key={4}>
             <ListItemIcon>
               <SettingsIcon className={classes.ListColor} />
             </ListItemIcon>
